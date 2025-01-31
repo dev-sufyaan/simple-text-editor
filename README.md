@@ -1,6 +1,6 @@
 <div align="center">
   <a href="#">
-    <img src="https://img.shields.io/github/stars/yourusername/smart-text-editor?style=social" alt="GitHub Stars">
+    <img src="https://github.com/dev-sufyaan/simple-text-editor.git" alt="GitHub Stars">
   </a>
   <h3 align="center">Smart Text Editor</h3>
   <p align="center">
