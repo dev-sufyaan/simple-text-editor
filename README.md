@@ -66,22 +66,10 @@ Tkinter Documentation
 📃 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 <div align="center">
-  <b>Maintained by [Your Name]</b>
+  <b>Maintained by Sufyaan</b>
   <br>
-  <a href="mailto:your-email@example.com">✉️ Contact Support</a>
+  <a href="mailto:dev.sufyaan@example.com">✉️ Contact Support</a>
   ·
-  <a href="https://your-website.com">🌐 Project Homepage</a>
+  <a href="https://sufyaan.netlify.app">🌐 Project Homepage</a>
 </div>
 ```
-Customization Notes:
-Replace yourusername with your GitHub username
-Add a logo or project screenshot at the top (use ![Alt Text](path/to/image.png))
-Update contact information and license details
-Add badges for code coverage, dependencies, etc., if applicable
-Advantages of This README:
-Professional Layout: Clear sections with consistent styling
-User-Friendly Instructions: Step-by-step setup guide
-Contribution Guidelines: Encourages community involvement
-Badges: Shows repository health metrics (stars, build status)
-Documentation Links: Helps newcomers understand dependencies
-Make sure to create a LICENSE file in your repository (use the MIT template for simplicity) and include a project logo image for better presentation.
