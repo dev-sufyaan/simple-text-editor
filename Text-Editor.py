@@ -23,7 +23,6 @@ class TextEditor:
         self.create_menus()
         self.apply_styles()
         self.bind_events()
-        self.root.update_idletasks()
         self.init_spell_checker()
 
     def init_spell_checker(self):
@@ -57,18 +56,6 @@ class TextEditor:
                                    fg="#1A1A1A",
                                    anchor="e")
         self.status_bar.pack(fill=tk.X, padx=10, pady=(0, 5))
-
-        # Line numbers
-        self.line_numbers = tk.Text(self.root,
-                                    font=("Segoe UI", 12),
-                                    width=6,
-                                    padx=5,
-                                    pady=5,
-                                    bg="#F8F8F8",
-                                    fg="#828282",
-                                    state="disabled",
-                                    spacing1=5)
-        self.line_numbers.pack(fill=tk.Y, side=tk.LEFT, padx=(10, 0))
 
     def create_menus(self):
         menu_bar = tk.Menu(self.root)
@@ -108,7 +95,6 @@ class TextEditor:
 
     def apply_styles(self):
         self.text_area.config(borderwidth=0, highlightthickness=0)
-        self.line_numbers.config(borderwidth=0, highlightthickness=0)
         style = tk_font.Font(family="Segoe UI", size=9)
         self.root.option_add("*Font", style)
 
@@ -119,10 +105,6 @@ class TextEditor:
         self.root.bind("<Control-s>", lambda e: self.save_file())
         self.root.bind("<Control-Shift-S>", lambda e: self.save_as())
         self.root.bind("<KeyRelease>", self.update_status_bar, add="+")
-        self.root.bind("<Configure>", self.on_window_resize)
-
-    def on_window_resize(self, event=None):
-        self.update_line_numbers()
 
     def new_file(self, event=None):
         if not self.saved:
@@ -201,22 +183,18 @@ class TextEditor:
         font_window = tk.Toplevel(self.root)
         font_window.title("Font Settings")
 
-        # Current font properties
         current_font = tk_font.Font(font=self.text_area.cget("font"))
         font_families = sorted(tk_font.families())
 
-        # Font family selector
         family_var = tk.StringVar(value=current_font.cget("family"))
         tk.Label(font_window, text="Font Family:").pack(anchor=tk.W)
         family_menu = tk.OptionMenu(font_window, family_var, *font_families)
         family_menu.pack(anchor=tk.W, fill=tk.X)
 
-        # Font size selector
         size_var = tk.IntVar(value=current_font.cget("size"))
         tk.Label(font_window, text="Font Size:").pack(anchor=tk.W)
         tk.Scale(font_window, from_=8, to=40, variable=size_var, orient=tk.HORIZONTAL).pack(anchor=tk.W, fill=tk.X)
 
-        # Style options
         styles = {
             "Bold": tk.BooleanVar(value=current_font.cget("weight") == "bold"),
             "Italic": tk.BooleanVar(value=current_font.cget("slant") == "italic"),
@@ -225,7 +203,6 @@ class TextEditor:
         for style in styles:
             tk.Checkbutton(font_window, text=style, variable=styles[style]).pack(anchor=tk.W)
 
-        # Apply button
         tk.Button(font_window, text="Apply", command=lambda: self.apply_font(
             family_var.get(),
             size_var.get(),
@@ -262,16 +239,6 @@ class TextEditor:
             self.root.title(f"*{self.root.title()}")
         if self.spell_check_var.get() and self.spell_checker:
             self.root.after(300, self.check_spelling)
-        self.update_line_numbers()
-
-    def update_line_numbers(self):
-        text_content = self.text_area.get("1.0", "end")
-        lines = text_content.count('\n') + 1
-
-        self.line_numbers.config(state=tk.NORMAL)
-        self.line_numbers.delete(1.0, tk.END)
-        self.line_numbers.insert(tk.END, '\n'.join(str(i) for i in range(1, lines + 1)))
-        self.line_numbers.config(state=tk.DISABLED)
 
     def update_status_bar(self, event=None):
         line, column = self.text_area.index(tk.INSERT).split(".")
