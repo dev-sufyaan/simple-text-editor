@@ -278,7 +278,7 @@ class TextEditor:
         self.status_bar.config(text=f"Line {line}  Column {column}")
 
     def show_about(self):
-        messagebox.showinfo("About", "Smart Text Editor v1.0\nCreated by Your Name\nAll done!")
+        messagebox.showinfo("About", "Smart Text Editor v1.0\nCreated by Sufyaan\nAll done!")
 
 if __name__ == "__main__":
     root = tk.Tk()
