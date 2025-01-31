@@ -7,7 +7,7 @@
     A feature-rich, intelligent text editor with real-time spell checking and modern styling.
     <br>
     <sub>Build status: 
-      <img src="https://github.com/yourusername/smart-text-editor/actions/workflows/python-app.yml/badge.svg" alt="Build Status">
+      <img src="https://github.com/dev-sufyaan/simple-text-editor.git" alt="Build Status">
     </sub>
   </p>
 </div>
