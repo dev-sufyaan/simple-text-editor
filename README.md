@@ -1,13 +1,13 @@
 <div align="center">
-  <a href="#">
-    <img src="https://github.com/dev-sufyaan/simple-text-editor.git" alt="GitHub Stars">
+  <a href="https://github.com/dev-sufyaan/simple-text-editor">
+    <img src="https://img.shields.io/github/stars/dev-sufyaan/simple-text-editor?style=social" alt="GitHub Stars">
   </a>
   <h3 align="center">Smart Text Editor</h3>
   <p align="center">
     A feature-rich, intelligent text editor with real-time spell checking and modern styling.
     <br>
     <sub>Build status: 
-      <img src="https://github.com/dev-sufyaan/simple-text-editor.git" alt="Build Status">
+      <img src="https://github.com/dev-sufyaan/simple-text-editor/workflows/CI/badge.svg" alt="Build Status">
     </sub>
   </p>
 </div>
@@ -38,38 +38,39 @@ The Smart Text Editor is a Python-based text editor that combines modern aesthet
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/smart-text-editor.git
-Install dependencies:
-bashCopy
-pip install pyenchant
+   git clone https://github.com/dev-sufyaan/simple-text-editor.git
+
+    Install dependencies:
+    bashCopy
+
+    pip install pyenchant
+
 Usage
-Run the application:
-bashCopy
-python main.py
-Start typing and enjoy real-time spell checking
-Use the menu bar to manage files and formatting
-Adjust font settings through the Format menu
+
+    Run the application:
+    bashCopy
+
+    python main.py
+
+    Start typing and enjoy real-time spell checking
+    Use the menu bar to manage files and formatting
+    Adjust font settings through the Format menu
+
 ⚙️ Configuration
-Spell Checker
-Requires English dictionary (en_US)
-Install system-wide using sudo apt-get install aspell-en (Linux)
-Check pyenchant documentation for other platforms
+
+    Spell Checker:
+        Requires English dictionary (en_US).
+        Install system-wide using sudo apt-get install aspell-en (Linux).
+        Check pyenchant documentation for other platforms.
+
 🤝 Contributing
-Fork the project
-Create your feature branch: git checkout -b feature/new-feature
-Commit your changes: git commit -m "Add some feature"
-Push to the branch: git push origin feature/new-feature
-Open a pull request
-📝 Documentation
-Enchant Dictionary Management
-Tkinter Documentation
-📃 License
+
+    Fork the project
+    Create your feature branch: git checkout -b feature/new-feature
+    Commit your changes: git commit -m "Add some feature"
+    Push to the branch: git push origin feature/new-feature
+    Open a pull request
+
+📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
-<div align="center">
-  <b>Maintained by Sufyaan</b>
-  <br>
-  <a href="mailto:dev.sufyaan@example.com">✉️ Contact Support</a>
-  ·
-  <a href="https://sufyaan.netlify.app">🌐 Project Homepage</a>
-</div>
 ```
